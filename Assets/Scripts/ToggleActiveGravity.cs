@@ -18,7 +18,14 @@ public class WhateverIDK : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.useGravity = true;
+            rb.useGravity = !rb.useGravity;
+
+            if (!rb.useGravity)
+            {
+                Vector3 temp = rb.velocity;
+                temp.y = 0f;
+                rb.velocity = temp;
+            }
         }
     }
 }
