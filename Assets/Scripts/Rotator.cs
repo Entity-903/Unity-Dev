@@ -6,11 +6,7 @@ using UnityEngine.UIElements;
 public class Rotator : MonoBehaviour
 {
     [SerializeField][Range(-360, 360)] float angle;
-    [SerializeField][Range(2, 20)] float speed = 5;
-    void Start()
-    {
-        
-    }
+//    [SerializeField][Range(2, 20)] float speed = 5;
 
     // Update is called once per frame
     void Update()
@@ -18,7 +14,7 @@ public class Rotator : MonoBehaviour
         //transform.rotation *= Quaternion.AngleAxis(angle * Time.deltaTime, Vector3.up);
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            //transform.position += transform.forward * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
