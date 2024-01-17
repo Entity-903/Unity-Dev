@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 9085ea8815e5a70489e64b87e3fceb82
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - titleUI: {instanceID: 0}
+  - livesUI: {instanceID: 0}
+  - timerUI: {instanceID: 0}
+  - healthUI: {instanceID: 0}
+  - health: {instanceID: 0}
+  - scoreEvent: {fileID: 11400000, guid: 7f71f92bf2e73bd4f9d9108c2bdbfb87, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
