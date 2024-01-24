@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     [Header("Events")]
     [SerializeField] IntEvent scoreEvent = default;
     [SerializeField] VoidEvent gameStartEvent = default;
+    [SerializeField] VoidEvent playerDeadEvent = default;
 
     private int score = 0;
 
@@ -19,9 +21,9 @@ public class Player : MonoBehaviour
         get { return score; } 
         set { 
             score = value; 
-            scoreText.text = score.ToString(); 
+            scoreText.text = "Score: " + score.ToString(); 
             scoreEvent.RaiseEvent(score);
-        } 
+        }
     }
 
     private void OnEnable()
@@ -43,4 +45,26 @@ public class Player : MonoBehaviour
     {
         characterController.enabled = true;
     }
+
+    public void Damage(float damage)
+    {
+        health.value -= damage;
+        if (health.value <= 0)
+        {
+            playerDeadEvent.RaiseEvent();
+        }
+    }
+
+    public void OnRespawn(GameObject respawn)
+    {
+        transform.position = respawn.transform.position;
+        transform.rotation = respawn.transform.rotation;
+
+        characterController.Reset();
+    }
+
+	public static explicit operator Player(GameObject v)
+	{
+		throw new NotImplementedException();
+	}
 }

@@ -19,6 +19,6 @@ public class Pickup : MonoBehaviour
         }
 
         Instantiate(pickupPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject, 1);
+        Destroy(gameObject);
     }
 }
