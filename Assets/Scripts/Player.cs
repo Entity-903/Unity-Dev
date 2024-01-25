@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        health.value = 50f;
+        // health.value = 50f;
     }
 
     public void AddPoints(int points)
@@ -53,6 +53,16 @@ public class Player : MonoBehaviour
         {
             playerDeadEvent.RaiseEvent();
         }
+
+		if (health.value >= 100)
+		{
+			health.value = 100;
+		}
+	}
+
+    public Rigidbody GetRigidbody()
+    {
+        return characterController.rb;
     }
 
     public void OnRespawn(GameObject respawn)

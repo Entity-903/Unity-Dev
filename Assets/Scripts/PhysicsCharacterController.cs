@@ -13,7 +13,7 @@ public class PhysicsCharacterController : MonoBehaviour
     [SerializeField][Range(0, 5)] float rayLength = 1;
     [SerializeField] LayerMask groundLayerMask;
 
-    Rigidbody rb;
+    public Rigidbody rb;
     Vector3 force = Vector3.zero;
     void Start()
     {
@@ -40,7 +40,7 @@ public class PhysicsCharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(force, ForceMode.Force);
+        rb.AddForce(force, ForceMode.Acceleration);
     }
 
     private bool CheckGround()

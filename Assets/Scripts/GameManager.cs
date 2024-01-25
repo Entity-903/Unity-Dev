@@ -85,7 +85,7 @@ public class GameManager : Singleton<GameManager>
 					break;
 				}
 				Player player = GameObject.Find("Player").GetComponent<Player>();
-				if (player.Score >= 10)
+				if (player.Score >= 100) // 100
 				{
 					state = State.GAME_WON;
 				}
