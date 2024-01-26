@@ -14,6 +14,5 @@ public class Heal : MonoBehaviour
 			player.Damage(-heal);
 			Destroy(this.gameObject);
 		}
-
 	}
 }

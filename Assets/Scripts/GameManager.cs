@@ -56,6 +56,8 @@ public class GameManager : Singleton<GameManager>
 
 	void Update()
 	{
+
+		if (Input.GetButton("Cancel")) Application.Quit();
 		switch (state) 
 		{
 			case State.TITLE:
@@ -85,7 +87,7 @@ public class GameManager : Singleton<GameManager>
 					break;
 				}
 				Player player = GameObject.Find("Player").GetComponent<Player>();
-				if (player.Score >= 100) // 100
+				if (player.Score >= 110) // 110 total points available in game
 				{
 					state = State.GAME_WON;
 				}
@@ -134,5 +136,10 @@ public class GameManager : Singleton<GameManager>
 	public void OnPlayerDead()
 	{
 		state = State.PLAYER_DEAD;
+	}
+
+	public void OnAddTime(int time)
+	{
+		timer += time;
 	}
 }
