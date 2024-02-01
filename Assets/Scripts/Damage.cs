@@ -12,9 +12,9 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(oneTime && other.gameObject.TryGetComponent<Player>(out Player player))
+        if(oneTime && other.gameObject.TryGetComponent(out IDamagable damagable))
         {
-            player.Damage(damage * Time.deltaTime);
+            damagable.ApplyDamage(damage * Time.deltaTime);
         }
     }
 
@@ -22,7 +22,12 @@ public class Damage : MonoBehaviour
     {
         if (!oneTime && other.gameObject.TryGetComponent<Player>(out Player player))
         {
-            player.Damage(damage * Time.deltaTime);
+            player.ApplyDamage(damage * Time.deltaTime);
         }
     }
+}
+
+public interface IDamagable
+{
+    void ApplyDamage(float damage);
 }

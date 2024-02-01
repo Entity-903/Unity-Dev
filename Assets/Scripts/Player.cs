@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         characterController.enabled = true;
     }
 
-    public void Damage(float damage)
+    public void ApplyDamage(float damage)
     {
         health.value -= damage;
         if (health.value <= 0)
