@@ -11,7 +11,7 @@ public class Heal : MonoBehaviour
 	{
 		if (other.gameObject.TryGetComponent<Player>(out Player player))
 		{
-			player.Damage(-heal);
+			player.ApplyDamage(-heal);
 			Destroy(this.gameObject);
 		}
 	}
