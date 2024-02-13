@@ -40,24 +40,24 @@ public abstract class Ammo : Interactable
 	{
 		//
 	}
-	//public void OnDamage(GameObject target)
-	//{
-	//	// apply damage if game object has health
-	//	if (target.TryGetComponent<IDamagable>(out IDamagable damagable))
-	//	{
-	//		damagable.ApplyDamage(ammoData.damage * ((ammoData.damageOverTime) ? Time.deltaTime : 1));
-	//	}
+	public void OnDamage(GameObject target)
+	{
+		// apply damage if game object has health
+		if (target.TryGetComponent<IDamagable>(out IDamagable damagable))
+		{
+			damagable.ApplyDamage(ammoData.damage * ((ammoData.damageOverTime) ? Time.deltaTime : 1));
+		}
 
-	//	// create impact prefab
-	//	if (ammoData.impactPrefab != null)
-	//	{
-	//		Instantiate(ammoData.impactPrefab, transform.position, transform.rotation);
-	//	}
+		// create impact prefab
+		if (ammoData.impactPrefab != null)
+		{
+			Instantiate(ammoData.impactPrefab, transform.position, transform.rotation);
+		}
 
-	//	// destroy game object
-	//	if (ammoData.destroyOnImpact)
-	//	{
-	//		Destroy(gameObject);
-	//	}
-	//}
+		// destroy game object
+		if (ammoData.destroyOnImpact)
+		{
+			Destroy(gameObject);
+		}
+	}
 }

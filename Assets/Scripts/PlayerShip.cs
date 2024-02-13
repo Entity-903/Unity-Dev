@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerShip : Interactable
 {
-	[SerializeField] Action action;
+	[SerializeField] private Action action;
+	[SerializeField] private IntEvent scoreEvent;
+	//[SerializeField] private Inventory inventory;
+	[SerializeField] private FloatVariable score;
+	[SerializeField] private FloatVariable health;
 
-	[SerializeField] Inventory inventory;
+	[SerializeField] private GameObject hitPrefab;
+	[SerializeField] private GameObject destroyPrefab;
+
 	public override void OnInteractActive(GameObject gameObject)
 	{
 		throw new System.NotImplementedException();

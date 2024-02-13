@@ -22,8 +22,14 @@ public class SplineFollower : MonoBehaviour
 
     void Update()
     {
+        if (tdistance >= 0.99999f && speed != 0)
+        {
+            tdistance = 0.99999f;
+            speed = 0;
+        }
         distance += speed * Time.deltaTime;
-        UpdateTransform(math.frac(tdistance));
+        UpdateTransform(math.frac(tdistance));            
+
     }
 
 	void UpdateTransform(float t)

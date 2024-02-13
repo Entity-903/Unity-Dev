@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileAmmo : MonoBehaviour
+public class ProjectileAmmo : Ammo
 {
     [SerializeField] Action action;
 
